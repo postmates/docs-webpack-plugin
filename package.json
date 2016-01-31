@@ -1,0 +1,17 @@
+{
+  "name": "docs-plugin",
+  "main": "./index.js",
+  "description": "Generates a JSON object representing the documentation of your classes",
+  "license": "MIT",
+  "peerDependencies": {
+    "babel-traverse": "^6.4.5",
+    "babylon": "^6.4.5"
+  },
+  "dependencies": {
+    "pegjs": "^0.9.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "^6.4.5",
+    "babylon": "^6.4.5"
+  }
+}
