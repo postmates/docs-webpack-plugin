@@ -3,6 +3,17 @@
   "main": "./index.js",
   "description": "Generates a JSON object representing the documentation of your classes",
   "license": "MIT",
+  "author": "Postmates Engineering <eng@postmates.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/postmates/docs-plugin.git"
+  },
+  "keywords": [
+    "react",
+    "documentation",
+    "docs",
+    "webpack"
+  ],
   "peerDependencies": {
     "babel-traverse": "^6.4.5",
     "babylon": "^6.4.5"
