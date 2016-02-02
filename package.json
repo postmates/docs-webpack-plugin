@@ -1,12 +1,12 @@
 {
   "name": "docs-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generates a JSON object representing the documentation of your classes",
   "license": "MIT",
   "author": "Postmates Engineering <eng@postmates.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/postmates/docs-plugin.git"
+    "url": "https://github.com/postmates/docs-webpack-plugin.git"
   },
   "main": "./index.js",
   "keywords": [
