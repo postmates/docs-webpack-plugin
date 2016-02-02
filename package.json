@@ -1,6 +1,6 @@
 {
   "name": "docs-webpack-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generates a JSON object representing the documentation of your classes",
   "license": "MIT",
   "author": "Postmates Engineering <eng@postmates.com>",
@@ -15,15 +15,9 @@
     "docs",
     "webpack"
   ],
-  "peerDependencies": {
-    "babel-traverse": "^6.4.5",
-    "babylon": "^6.4.5"
-  },
   "dependencies": {
-    "pegjs": "^0.9.0"
-  },
-  "devDependencies": {
     "babel-traverse": "^6.4.5",
-    "babylon": "^6.4.5"
+    "babylon": "^6.4.5",
+    "pegjs": "^0.9.0"
   }
 }
