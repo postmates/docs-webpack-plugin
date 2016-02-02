@@ -3,7 +3,7 @@ A webpack plugin for validating documentation and generating a json file represe
 
 ## usage
 ```Javascript
-var DocsPlugin = require('docs-plugin');
+var DocsPlugin = require('docs-webpack-plugin');
 
 module.exports = {
 	plugins: [
