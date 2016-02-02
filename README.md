@@ -1,4 +1,4 @@
-# docs-plugin
+# docs-webpack-plugin
 A webpack plugin for validating documentation and generating a json file representing your class' documentation
 
 ## usage
