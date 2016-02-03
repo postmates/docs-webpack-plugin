@@ -1,6 +1,6 @@
 {
   "name": "docs-webpack-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generates a JSON object representing the documentation of your classes",
   "license": "MIT",
   "author": "Postmates Engineering <eng@postmates.com>",
