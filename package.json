@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/postmates/docs-webpack-plugin.git"
   },
+  "bin": {
+    "docs-cli": "./bin/docs-cli.js"
+  },
   "main": "./index.js",
   "keywords": [
     "react",
@@ -18,6 +21,10 @@
   "dependencies": {
     "babel-traverse": "^6.4.5",
     "babylon": "^6.4.5",
-    "pegjs": "^0.9.0"
+    "chalk": "^1.1.1",
+    "glob": "^6.0.4",
+    "optionator": "^0.8.1",
+    "pegjs": "^0.9.0",
+    "shelljs": "^0.5.3"
   }
 }
