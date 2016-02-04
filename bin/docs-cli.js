@@ -106,6 +106,7 @@ function run() {
                     docs.push(doc);
                 });
             } catch (e) {
+                throw e;
                 errors.push({
                     file: file,
                     message: e.message

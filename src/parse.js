@@ -50,20 +50,58 @@ function processDocs(doc) {
     return out;
 }
 
+function findMismatch(one, two) {
+    var _one = one.slice(0).sort(),
+        _two = two.slice(0).sort(),
+        out = [],
+        ni = 0,
+        no = 0;
+
+    while (ni < _one.length && no < _two.length) {
+        if (_one[ni] === _two[no]) {
+            ni++;
+            no++;
+            continue;
+        }
+
+        if (_one[ni] < _two[no]) {
+            out.push(_one[ni]);
+            ni++;
+        } else {
+            out.push(_two[no]);
+            no++;
+        }
+    }
+
+    while (ni < _one.length) {
+        out.push(_one[ni++]);
+    }
+
+    while (no < _two.length) {
+        out.push(_two[no++]);
+    }
+
+    return out;
+}
+
 function generateDescriptor(def) {
     var PROP_MISMATCH = def.name +
             ': Mismatch of React properties between documentation and code',
         NAME_MISMATCH = def.name +
             ': Mismatch of class name between documentation and code',
         MODEL_MISSSING = def.name +
-            ': Model definition is required';
+            ': Model definition is required',
+        mismatch;
 
     def.props = Object.keys(def.props);
 
     if (def.props.length) {
         if (
             def.super === 'ModelListener' &&
-            !def.docs.props.hasOwnProperty('model')
+            (
+                !def.props ||
+                def.props.indexOf('model') < 0
+            )
         ) {
             throw new Error(MODEL_MISSSING);
         }
@@ -73,7 +111,18 @@ function generateDescriptor(def) {
             (def.props.length !== Object.keys(def.docs.props).length) ||
             (def.props.slice(0).sort().join(',') !== Object.keys(def.docs.props).slice(0).sort().join(','))
         ) {
-            throw new Error(PROP_MISMATCH);
+            mismatch = findMismatch(def.props, Object.keys(def.docs.props || {}));
+
+            if (def.super === 'ModelListener' && mismatch.indexOf('model') > -1) {
+                mismatch.splice(mismatch.indexOf('model'), 1);
+            }
+
+            if (mismatch.length) {
+                throw new Error(
+                    PROP_MISMATCH + '\n\t' +
+                    mismatch.join('\n\t')
+                );
+            }
         }
 
         def.props = def.docs.props;
