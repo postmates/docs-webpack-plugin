@@ -223,6 +223,7 @@ module.exports = function parse(src) {
             plugins: [
                 'jsx',
                 'flow',
+                'objectRestSpread',
                 'classProperties'
             ]
         }),
